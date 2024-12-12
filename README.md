@@ -1,1 +1,0 @@
-# zeynepcevik.github.io
