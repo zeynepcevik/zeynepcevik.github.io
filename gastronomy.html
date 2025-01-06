@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gastronomy Explorer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff7e6;
+    color: #333;
+}
+
+.main {
+    margin-left: 20px;
+    padding: 20px;
+}
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.city-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.city-card {
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+.city-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.city-card h3 {
+    margin: 10px 0;
+}
+.city-card p {
+    padding: 0 10px;
+    color: gray;
+}
+.pricing {
+    text-align: center;
+    margin-top: 40px;
+}
+.pricing h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.pricing-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.pricing-card {
+    flex: 1;
+    max-width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+.pricing-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pricing-card li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.pricing-card li:last-child {
+    border-bottom: none;
+}
+.pricing-card h2 {
+    margin: 10px 0;
+}
+.pricing-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pricing-card button:hover {
+    background-color: #d35400;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <h1>Gastronomi Turları</h1>
+        <p>Türkiye'nin eşsiz lezzetlerini keşfetmek için yola çıkın</p>
+    </div>
+
+    <div class="city-grid">
+        <div class="city-card">
+            <img src="assets/gaziantep.jpg" alt="Gaziantep">
+            <h3>Gaziantep</h3>
+            <p>UNESCO tarafından tescillenmiş mutfağıyla meşhur Gaziantep'te lezzet şölenine katılın.</p>
+            <p>
+                Tadılacak Lezzetler: Baklava, Katmer, Beyran Çorbası.<br>
+                Popüler Restoranlar: İmam Çağdaş, Katmerci Zekeriya Usta.<br>
+                Aktiviteler: Gastronomi Müzesi, baklava yapım atölyesi.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/hatay.jpg" alt="Hatay">
+            <h3>Hatay</h3>
+            <p>Farklı kültürlerin buluştuğu Hatay'da yemeklerin hikayesini öğrenin ve lezzetlerin tadını çıkarın.</p>
+            <p>
+                Tadılacak Lezzetler: Künefe, Tepsi Kebabı, Humus.<br>
+                Popüler Restoranlar: Sultan Sofrası, Anadolu Sofrası.<br>
+                Aktiviteler: Künefe yapımı, yerel pazar gezisi.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/adana.jpg" alt="Adana">
+            <h3>Adana</h3>
+            <p>Adana'nın ünlü kebaplarını yerinde tadın ve sokak lezzetlerini keşfedin.</p>
+            <p>
+                Tadılacak Lezzetler: Adana Kebap, Şalgam, Bici Bici.<br>
+                Popüler Restoranlar: Onbaşılar Kebap, Kebapçı Mesut.<br>
+                Aktiviteler: Kebap festivali, şalgam tadımı.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/bursa.jpg" alt="Bursa">
+            <h3>Bursa</h3>
+            <p>İskender Kebap'ın doğduğu şehir Bursa'da tarih ve lezzeti bir arada yaşayın.</p>
+            <p>
+                Tadılacak Lezzetler: İskender Kebap, Pideli Köfte, Kemalpaşa Tatlısı.<br>
+                Popüler Restoranlar: Kebapçı İskender, Uludağ Kebapçısı.<br>
+                Aktiviteler: Tarihi han gezisi, tatlı yapım atölyesi.
+            </p>
+        </div>
+    </div>
+    
+
+    <div id="pricing" class="pricing">
+        <h4>Fiyatlandırma</h4>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Temel Gastronomi Paketi</li>
+                    <li>Gaziantep ve Hatay Turu</li>
+                    <li>Standart Konaklama</li>
+                    <li>Yerel Lezzetler Tadı</li>
+                    <li>
+                        <h2>₺2500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header" style="background-color: #e67e22; color: white;">Standart Gastronomi Paketi</li>
+                    <li>Adana ve Bursa Turları</li>
+                    <li>4 Yıldızlı Konaklama</li>
+                    <li>Yemek Atölyesi</li>
+                    <li>
+                        <h2>₺4500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Premium Gastronomi Paketi</li>
+                    <li>Tüm Bölgeler</li>
+                    <li>Lüks Konaklama</li>
+                    <li>Özel Şef Deneyimi</li>
+                    <li>
+                        <h2>₺7500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 Zeynep Çevik.</p>
+</div>
+
+</body>
+</html>

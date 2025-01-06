@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>BLISSTRAVEL</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#" class="logo">Bliss Travel</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">Ana Sayfa</a></li>
+        <li><a href="#about">Seyahat Çeşitleri</a></li>
+        <li><a href="#tour">Tur</a></li>
+        <li><a href="#package"></a></li>
+        <li><a href="#contact">İletişim</a></li>
+        <li><a href="./login.html">Rezervasyon Yap</a>
+
+
+        <li><a href="#">BOOK TRIP</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn" onclick="redirectToBookTrip()">BOOK TRIP</button>
+
+        <button class = "btn"> LOGIN</button>
+        <span id="welcome-message" style="display: none;"></span>
+      </div>
+      </nav>
+
+    <header id="home">
+      <div class="header__container">
+        <div class="header__content">
+          <p>SEYAHAT DENEYİMİNİZİ YENİ ZİRVELERE TAŞIYIN</p>
+          <h1>Hayallerinizdeki Tatili Şimdi Gerçekleştirin!</h1>
+          <div class="header__btns">
+            <button class="btn" onclick="window.location.href = './login.html';">
+              Şimdi Rezervasyon Yap!
+            </button>
+          </div>
+      </div>
+    </header>
+
+    <section class="section__container destination__container" id="about">
+      <h2 class="section__header">Popüler Seyahatler</h2>
+      <p class="section__description">
+        Dünyanın En Büyüleyici Seyahat Noktalarını Keşfedin
+      </p>
+      <div class="destination__grid">
+        <div class="destination__card">
+          <img src="assets/destination-1.jpg" alt="destination" />
+          <div class="destination__card__details">
+            <div>
+              <h4>Doğa ve Macera Seyahatleri</h4>
+              <a href="nature-adventure.html">Daha fazla bilgi</a>
+              
+            </div>
+            <div class="destination__rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.7★
+            </div>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="assets/destination-2.jpg" alt="destination" />
+          <div class="destination__card__details">
+            <div>
+              <h4>Romantik ve Balayı Seyahatleri</h4>
+              <a href="romantic.html">Daha fazla bilgi</a>
+            </div>
+            <div class="destination__rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.5★
+            </div>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="assets/destination-3.jpg" alt="destination" />
+          <div class="destination__card__details">
+            <div>
+              <h4>Kültürel ve Tarihi Turlar</h4>
+              <a href="cultural.html">Daha fazla bilgi</a>
+            </div>
+            <div class="destination__rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.8★
+            </div>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="assets/destination-4.jpg" alt="destination" />
+          <div class="destination__card__details">
+            <div>
+              <h4>Gastronomi Turları</h4>
+              <a href="gastronomy.html">Daha fazla bilgi</a>
+            </div>
+            <div class="destination__rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.9★
+            </div>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="assets/destination-5.jpg" alt="destination" />
+          <div class="destination__card__details">
+            <div>
+              <h4>Yelken ve Deniz Seyahatleri</h4>
+              <a href="sail-sea.html">Daha fazla bilgi</a>
+            </div>
+            <div class="destination__rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.7★
+            </div>
+          </div>
+        </div>
+        <div class="destination__card">
+          <img src="assets/destination-6.jpg" alt="destination" />
+          <div class="destination__card__details">
+            <div>
+              <h4>Aile ve Çocuk Dostu Seyahatler</h4>
+              <a href="family.html">Daha fazla bilgi</a>
+            </div>
+            <div class="destination__rating">
+              <span><i class="ri-star-fill"></i></span>
+              5.0★
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="section__container journey__container" id="tour">
+      <h2 class="section__header">KAMPANYALAR</h2>
+      <p class="section__description">
+        Seyahatinizi Daha Avantajlı Hale Getiren Özel Fırsatlar
+      </p>
+      <div class="journey__grid">
+        <div class="journey__card">
+          <div class="journey__card__bg">
+            <span><i class="ri-bookmark-3-line"></i></span>
+            <h4>%20 Erken Rezervasyon İndirimi</h4>
+          </div>
+          <div class="journey__card__content">
+            <span><i class="ri-bookmark-3-line"></i></span>
+            <h4>Erken Planlayanlar Kazanır</h4>
+            <p>
+              Erken rezervasyon yaparak %20'ye varan indirimlerden yararlanın ve
+              hayalinizdeki tatili daha uygun fiyatlarla gerçekleştirin.
+            </p>
+          </div>
+        </div>
+        <div class="journey__card">
+          <div class="journey__card__bg">
+            <span><i class="ri-landscape-fill"></i></span>
+            <h4>2 Gece Konakla, 3. Gece Bizden</h4>
+          </div>
+          <div class="journey__card__content">
+            <span><i class="ri-landscape-fill"></i></span>
+            <h4>Ücretsiz Gece Fırsatı</h4>
+            <p>
+              Seçili otellerde 2 gece konaklama yaptığınızda 3. gece ücretsiz.
+          Tatilinizi uzatın, daha fazlasını yaşayın.
+            </p>
+          </div>
+        </div>
+        <div class="journey__card">
+          <div class="journey__card__bg">
+            <span><i class="ri-map-2-line"></i></span>
+            <h4>Uçak Bileti Dahil Tatil Paketleri</h4>
+          </div>
+          <div class="journey__card__content">
+            <span><i class="ri-map-2-line"></i></span>
+            <h4>Her Şey Dahil Seyahat</h4>
+            <p>
+              Uçak bileti, konaklama ve transferleri bir arada sunan uygun fiyatlı
+          tatil paketleri ile keyif dolu bir yolculuğa çıkın.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container showcase__container" id="package">
+      <div class="showcase__image">
+        <img src="assets/showcase.jpg" alt="showcase" />
+      </div>
+      <div class="showcase__content">
+        <h4>BLISS TRAVEL İLE HAYALİNİZDEKİ YOLCULUĞU KEŞFEDİN</h4>
+        <p>
+          Bliss Travel ile her anı unutulmaz kılacak bir seyahat deneyimine adım atın.
+          Dünyanın dört bir yanındaki eşsiz destinasyonlarla hazırladığımız özel seyahat 
+          paketlerimizle, her türden tatili hayal ettiğiniz gibi şekillendirebilirsiniz. 
+          İster lüks tatil köylerinde huzur içinde dinlenmeyi, ister egzotik adalarda 
+          macera dolu bir keşif yapmayı arzulayın, Bliss Travel sizin için en mükemmel 
+          paketi oluşturur.
+        </p>
+        <p>
+          Seyahat etmeyi sevdiğiniz yerleri, ilgi alanlarınıza göre özelleştiriyor ve 
+          her yolculuğunuzu unutulmaz kılacak şekilde planlıyoruz. Kültürel zenginlikleri
+          keşfetmek, doğanın kucağında huzur bulmak veya şehirlerin kalabalığında kaybolmak…
+          Bliss Travel, her türlü seyahat beklentinizi karşılayacak seçenekler sunar.
+        </p>
+
+        <p>
+          Eşsiz turlarımız, konforlu ulaşım imkanları, yerel rehberler ve kişiye özel hizmetlerle
+          seyahatinizi kusursuz hale getiriyoruz. En popüler rotalardan en gizli köşelere kadar 
+          her şeyin düşünüldüğü seyahat paketlerimizle, her anın tadını çıkarın ve hayat boyu 
+          sürecek anılar biriktirin..
+        </p>
+        <div class="showcase__btn">
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container discover__container">
+      <h2 class="section__header">Büyüleyici Manzaraların Keyfini Çıkarın</h2>
+      <p class="section__description">
+      </p>
+      <div class="discover__grid">
+        <div class="discover__card">
+          <span><i class="ri-camera-lens-line"></i></span>
+          <h4>Gökten Şehir Silüetleri</h4>
+          <p>
+            Modern yapıları ve tarihi mahalleleri, yükseklerden bakarak keşfedin, 
+            her açıdan yeni bir güzellik sunduğuna şahit olun.
+          </p>
+        </div>
+        <div class="discover__card">
+          <span><i class="ri-ship-line"></i></span>
+          <h4>Deniz Kenarı Maceraları</h4>
+          <p>
+            Berrak denizlerin ve saklı plajların üzerinde süzülerken, doğal cennetleri ve 
+            gizli koyları gözler önüne serin.
+          </p>
+        </div>
+        <div class="discover__card">
+          <span><i class="ri-landscape-line"></i></span>
+          <h4>Efsanevi Kalıntılar</h4>
+          <p>
+            Binlerce yıllık tarihi yapıları, yukarıdan bakarak, toprak seviyesinin 
+            sunamayacağı bir detayla inceleyin..
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#" class="logo">Bliss Travel</a>
+          </div>
+          <ul class="footer__socials">
+            
+          </ul>
+        </div>
+        <div class="footer__col">
+          
+          
+        </div>
+        <div class="footer__col">
+          <h4>İletişime Geçin</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="#">
+                <span><i class="ri-record-mail-line"></i></span> dev.zeynepcevik@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="ri-map-pin-2-fill"></i></span> Istanbul, Türkiye
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <form action="/">
+          </form>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Zeynep Çevik
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".btn")[1].addEventListener("click", function () {
+        window.location.href = "./login.html";
+      });
+
+      document.querySelectorAll(".btn")[0].addEventListener("click", function () {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if (isLoggedIn) {
+          window.location.href = "./book-trip.html"; 
+        } else {
+          window.location.href = "./login.html"; 
+        }
+        });
+
+    
+      document.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        const userEmail = localStorage.getItem("Email");
+    
+        if (isLoggedIn && userEmail) {
+          const welcomeMessage = document.getElementById("welcome-message");
+          welcomeMessage.textContent = `Hoşgeldiniz, ${userEmail}`;
+          welcomeMessage.style.display = "inline"; 
+        }
+      });
+    
+      function handleLogin() {
+        const email = document.getElementById("login-email").value.trim();
+        const password = document.getElementById("login-password").value.trim();
+    
+        const storedEmail = localStorage.getItem("Email");
+        const storedPassword = localStorage.getItem("Password");
+    
+        if (email === storedEmail && password === storedPassword) {
+          alert("Giriş başarılı!");
+          localStorage.setItem("isLoggedIn", "true"); 
+          window.location.href = "./index.html"; 
+        } else {
+          alert("E-posta veya şifre hatalı.");
+        }
+      }
+    </script>
+    <script src="main.js"></script>
+    
+  </body>
+</html>

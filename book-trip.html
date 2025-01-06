@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Trip</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("assets/booking-bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        color: #4d3722;
+      }
+
+      .btn {
+        width: 30%;
+        padding: 10px;
+        background-color: #4caf50; 
+        color: white;
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+
+      .header {
+        background-color: #f1f1f1;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+
+      .header a:hover {
+        background-color: #ddd;
+      }
+
+      .header a.active {
+        background-color: dodgerblue;
+        color: white;
+      }
+
+      .tab-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .tab-container a {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        background-color: white;
+        text-decoration: none;
+        color: #333;
+        border-radius: 4px 4px 0 0;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .tab-container a.active {
+        background-color: #45b07e;
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 0 4px 4px 4px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        height: 80%;
+      }
+
+      .tab-content.active {
+        display: block;
+        background-color: rgb(242, 229, 220);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        background-color: #f8d5b4;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .form__group {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      .form__group label {
+        display: block;
+        margin-bottom: 5px;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .form__group input,
+      .form__group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hayalinizdeki Tatili Planlayın!</h1>
+
+      <div class="tab-container">
+        <a href="#" class="tab active" onclick="showTab(event, 'booktrip')"
+          >Randevu Al</a
+        >
+        <a href="#" class="tab" onclick="showTab(event, 'bookingList')"
+          >Rezervasyonlarım</a
+        >
+      </div>
+
+      <div
+        id="userGreeting"
+        style="
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          color: #333;
+          font-size: 16px;
+        "
+      >
+        Hoşgeldiniz, <span id="userEmail"></span>
+      </div>
+
+      <div id="booktrip" class="tab-content active">
+        <form id="tripForm">
+          <div class="form__group">
+            <label for="package">Paket Seçiniz:</label>
+            <select id="package" name="package" required>
+              <option value="">-- Paketler --</option>
+              <option value="adventure">Doğa ve Macera Seyahatleri</option>
+              <option value="romantic">Romantik ve Balayı Seyahatleri</option>
+              <option value="cultural">Kültürel ve Tarihi Turlar</option>
+              <option value="gastronomy">Gastronomi Turları</option>
+              <option value="sailing">Yelken ve Deniz Seyahatleri</option>
+              <option value="family">Aile ve Çocuk Dostu Seyahatler</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label for="city">Şehir Seçiniz:</label>
+            <select id="city" name="city" required>
+              <option value="">-- Önce bir kategori seçin --</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="startDate">BaşlangıçTarihi :</label>
+            <input type="date" id="startDate" name="startDate" required />
+          </div>
+          <div class="form__group">
+            <label for="endDate">Bitiş Tarihi:</label>
+            <input type="date" id="endDate" name="endDate" />
+          </div>
+
+          <button type="submit" class="btn">Rezervasyon Yap</button>
+        </form>
+      </div>
+
+      <div id="bookingList" class="tab-content">
+        <h3>Rezervasyonlarım</h3>
+        <div class="booking__list"></div>
+      </div>
+
+      <div id="bookTripScreen" style="display: none">
+        <h2>Welcome to your booking screen</h2>
+        <p>Your email: <span id="user-email"></span></p>
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const userEmail = localStorage.getItem("loggedInEmail"); 
+        const userGreeting = document.getElementById("userEmail");
+
+        if (userEmail) {
+          userGreeting.textContent = userEmail; 
+        } else {
+          userGreeting.textContent = "Misafir"; 
+        }
+      });
+
+      function handleLogin() {
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        if (!emailRegex.test(email)) {
+          alert("Geçersiz e-posta formatı!");
+          return;
+        }
+
+        const storedEmail = localStorage.getItem("Email");
+        const storedPassword = localStorage.getItem("Password");
+        const storedFirstname = localStorage.getItem("Firstname");
+        const storedLastname = localStorage.getItem("Lastname");
+
+        if (email === storedEmail && password === storedPassword) {
+          alert(`Hoşgeldiniz, ${storedFirstname} ${storedLastname}!`);
+
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("loggedInEmail", email);
+
+          window.location.href = "./book-trip.html";
+        } else {
+          alert("E-posta veya şifre hatalı.");
+        }
+      }
+
+      function showTab(event, tabId) {
+        event.preventDefault();
+
+        const tabs = document.querySelectorAll(".tab");
+        const contents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach((tab) => tab.classList.remove("active"));
+        contents.forEach((content) => content.classList.remove("active"));
+
+        event.target.classList.add("active");
+        document.getElementById(tabId).classList.add("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const tripForm = document.getElementById("tripForm");
+        const bookingList = document.getElementById("bookingList");
+
+        tripForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const packageType = document.getElementById("package").value;
+          const startDate = document.getElementById("startDate").value;
+          const endDate = document.getElementById("endDate").value;
+
+          if (!packageType || !startDate || !endDate) {
+            alert("Lütfen alanları doldurun!");
+            return;
+          }
+
+          const startDateObj = new Date(startDate);
+          const endDateObj = new Date(endDate);
+          const timeDiff = endDateObj - startDateObj;
+
+          if (timeDiff < 0) {
+            alert("Bitiş tarihi başlangıç tarihinden sonra olmalıdır!");
+            return;
+          }
+
+          const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) + 1;
+
+          const bookingData = { packageType, startDate, endDate, days };
+          addBookingToUI(bookingData);
+          saveBookingToLocalStorage(bookingData);
+          tripForm.reset();
+        });
+
+        function addBookingToUI(booking) {
+          const bookingItem = document.createElement("div");
+          bookingItem.classList.add("booking__item");
+
+          bookingItem.innerHTML = `
+            <h4>${booking.packageType} Tatil</h4>
+            <p>Başlangıç Tarihi: ${booking.startDate}</p>
+            <p>Bitiş Tarihi: ${booking.endDate}</p>
+            <p>Konaklama: ${booking.days} gün</p>
+            <button class="btn btn--danger delete">Sil</button>
+            <button class="btn update">Güncelle</button>
+          `;
+
+          const deleteButton = bookingItem.querySelector(".delete");
+          deleteButton.addEventListener("click", () => {
+            if (confirm("Bu rezervasyonu silmek istediğinize emin misiniz?")) {
+              bookingItem.remove();
+              removeBookingFromLocalStorage(booking);
+              alert("Rezervasyon başarıyla silindi.");
+            }
+          });
+
+          const updateButton = bookingItem.querySelector(".update");
+          updateButton.addEventListener("click", () => {
+            document.getElementById("package").value = booking.packageType;
+            document.getElementById("startDate").value = booking.startDate;
+            document.getElementById("endDate").value = booking.endDate;
+            bookingItem.remove();
+            removeBookingFromLocalStorage(booking);
+          });
+
+          bookingList.appendChild(bookingItem);
+        }
+
+        function saveBookingToLocalStorage(booking) {
+          const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+          const isDateConflict = bookings.some(
+            (existingBooking) =>
+              new Date(existingBooking.startDate) <=
+                new Date(booking.endDate) &&
+              new Date(existingBooking.endDate) >= new Date(booking.startDate)
+          );
+
+          if (isDateConflict) {
+            alert("Aynı tarihler aralığında randevu kaydı yapılamaz!");
+            return;
+          }
+
+          bookings.push(booking);
+          localStorage.setItem("bookings", JSON.stringify(bookings));
+
+          alert("Rezervasyonunuz başarıyla oluştu!");
+        }
+
+        function removeBookingFromLocalStorage(bookingToRemove) {
+          const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+          const updatedBookings = bookings.filter(
+            (booking) =>
+              booking.packageType !== bookingToRemove.packageType ||
+              booking.startDate !== bookingToRemove.startDate ||
+              booking.endDate !== bookingToRemove.endDate
+          );
+          localStorage.setItem("bookings", JSON.stringify(updatedBookings));
+        }
+
+        function loadBookingsFromLocalStorage() {
+          const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+          bookings.forEach((booking) => addBookingToUI(booking));
+        }
+
+        loadBookingsFromLocalStorage();
+      });
+
+      function updateCityOptions() {
+        const citySelect = document.getElementById("city");
+        const packageType = document.getElementById("package").value;
+
+        const cityOptions = {
+          adventure: ["Kapadokya", "Kaş", "Gökçeada", "Nemrut Dağı"],
+          romantic: ["Bodrum", "Bozcaada", "Kapadokya", "Abant"],
+          cultural: ["İstanbul", "Efes", "Göbeklitepe", "Safranbolu"],
+          gastronomy: ["Gaziantep", "Hatay", "Adana", "Bursa"],
+          sailing: ["Göcek", "Marmaris", "Fethiye", "Çeşme"],
+          family: ["Antalya", "İzmir", "Akyaka", "Sapanca"],
+        };
+
+        citySelect.innerHTML = '<option value="">-- Şehir seçiniz --</option>';
+
+        if (packageType && cityOptions[packageType]) {
+          cityOptions[packageType].forEach((city) => {
+            const option = document.createElement("option");
+            option.value = city;
+            option.textContent = city;
+            citySelect.appendChild(option);
+          });
+        }
+      }
+
+      const packageSelect = document.getElementById("package");
+      packageSelect.addEventListener("change", updateCityOptions);
+
+      tripForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const packageType = document.getElementById("package").value;
+        const city = document.getElementById("city").value;
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+
+        if (!packageType || !city || !startDate || !endDate) {
+          alert("Lütfen tüm alanları doldurun!");
+          return;
+        }
+
+        const startDateObj = new Date(startDate);
+        const endDateObj = new Date(endDate);
+        const timeDiff = endDateObj - startDateObj;
+
+        if (timeDiff < 0) {
+          alert("Bitiş tarihi başlangıç tarihinden sonra olmalıdır!");
+          return;
+        }
+
+        const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) + 1;
+
+        const bookingData = { packageType, city, startDate, endDate, days };
+        addBookingToUI(bookingData);
+        saveBookingToLocalStorage(bookingData);
+        tripForm.reset();
+      });
+    </script>
+  </body>
+</html>

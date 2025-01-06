@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Adventure Escapes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7f3f4;
+    color: #333;
+}
+
+.main {
+    margin-left: 20px;
+    padding: 20px;
+}
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.city-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.city-card {
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+.city-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.city-card h3 {
+    margin: 10px 0;
+}
+.city-card p {
+    padding: 0 10px;
+    color: gray;
+}
+.pricing {
+    text-align: center;
+    margin-top: 40px;
+}
+.pricing h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.pricing-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.pricing-card {
+    flex: 1;
+    max-width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+.pricing-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pricing-card li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.pricing-card li:last-child {
+    border-bottom: none;
+}
+.pricing-card h2 {
+    margin: 10px 0;
+}
+.pricing-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pricing-card button:hover {
+    background-color: #0056b3;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <h1>Macera Kaçamakları</h1>
+        <p>Adrenalinin doruklarına çıkabileceğiniz nefes kesici rotalar</p>
+    </div>
+
+    <div class="city-grid">
+        <div class="city-card">
+            <img src="assets/kapadokya.jpg" alt="Kapadokya">
+            <h3>Kapadokya</h3>
+            <p>Balon turları ve kayalık vadilerle dolu eşsiz bir macera.</p>
+            <p>
+                Yapılacak Aktiviteler: Balon turları, ATV safarileri, trekking.<br>
+                Popüler Restoranlar: Seten Restaurant, Old Cappadocia Cafe.<br>
+                Konaklama: Mağara otelleri ve kamp alanları.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/kas.jpg" alt="Kaş">
+            <h3>Kaş</h3>
+            <p>Dalgaların altında büyüleyici bir dünya keşfetmek için dalış tutkunlarının cenneti.</p>
+            <p>
+                Yapılacak Aktiviteler: Scuba diving, yamaç paraşütü, deniz kanosu.<br>
+                Popüler Restoranlar: Smiley's, Oburus Momus.<br>
+                Konaklama: Sahil pansiyonları ve butik oteller.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/gokceada.jpg" alt="Gökçeada">
+            <h3>Gökçeada</h3>
+            <p>Sörf rüzgarlarının ve doğal yaşamın büyüleyici karışımı.</p>
+            <p>
+                Yapılacak Aktiviteler: Rüzgar sörfü, doğa yürüyüşleri.<br>
+                Popüler Restoranlar: Yakamoz Restaurant, Mustafa'nın Kayfesi.<br>
+                Konaklama: Doğa otelleri ve köy evleri.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/nemrut.jpg" alt="Nemrut Dağı">
+            <h3>Nemrut Dağı</h3>
+            <p>Güneşin doğuşunu devasa heykeller eşliğinde izleme deneyimi.</p>
+            <p>
+                Yapılacak Aktiviteler: Doğa yürüyüşleri, fotoğrafçılık.<br>
+                Popüler Restoranlar: Adıyaman Sofrası, Nemrut Cafe.<br>
+                Konaklama: Dağ otelleri ve yerel pansiyonlar.
+            </p>
+        </div>
+    </div>
+    
+
+    <div id="pricing" class="pricing">
+        <h4>Fiyatlandırma</h4>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Temel Macera Paketi</li>
+                    <li>Kapadokya ve Kaş Turları</li>
+                    <li>Standart Konaklama</li>
+                    <li>Temel Ekipmanlar</li>
+                    <li>
+                        <h2>₺3500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header" style="background-color: #007BFF; color: white;">Standart Macera Paketi</li>
+                    <li>Gökçeada ve Nemrut Dağı Turları</li>
+                    <li>4 Yıldızlı Konaklama</li>
+                    <li>Profesyonel Rehber</li>
+                    <li>
+                        <h2>₺5500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Premium Macera Paketi</li>
+                    <li>Tüm Bölgeler</li>
+                    <li>Lüks Konaklama</li>
+                    <li>VIP Ekipmanlar ve Hizmetler</li>
+                    <li>
+                        <h2>₺9000</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 Zeynep Çevik.</p>
+</div>
+
+</body>
+</html>

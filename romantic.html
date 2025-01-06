@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Romantic Escapes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+    color: #333;
+}
+
+.main {
+    margin-left: 20px;
+    padding: 20px;
+}
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.city-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.city-card {
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+.city-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.city-card h3 {
+    margin: 10px 0;
+}
+.city-card p {
+    padding: 0 10px;
+    color: gray;
+}
+.pricing {
+    text-align: center;
+    margin-top: 40px;
+}
+.pricing h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.pricing-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.pricing-card {
+    flex: 1;
+    max-width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+.pricing-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pricing-card li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.pricing-card li:last-child {
+    border-bottom: none;
+}
+.pricing-card h2 {
+    margin: 10px 0;
+}
+.pricing-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff66b2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pricing-card button:hover {
+    background-color: #e60073;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <h1>Romantik Seyahatler</h1>
+        <p>Huzurun izini sürebileceğiniz eşsiz destinasyonlar</p>
+    </div>
+
+    <div class="city-grid">
+        <div class="city-card">
+            <img src="assets/bodrum.jpg" alt="Bodrum">
+            <h3>Bodrum</h3>
+            <p>Deniz kenarında romantik gün batımları ve gece eğlenceleriyle Bodrum'un keyfini çıkarın.</p>
+            <p>
+                Yapılacak Aktiviteler: Gün batımı tekne turları, plajda akşam yemeği.<br>
+                Popüler Restoranlar: Memedof, Mimoza.<br>
+                Konaklama: Lüks butik oteller ve sahil tatil köyleri.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/bozcada.jpg" alt="Bozcaada">
+            <h3>Bozcaada</h3>
+            <p>Şirin sokakları, şarap bağları ve huzurlu atmosferiyle unutulmaz bir deneyim.</p>
+            <p>
+                Yapılacak Aktiviteler: Şarap tadımı, rüzgar gülleri gezisi.<br>
+                Popüler Restoranlar: Vahit'in Yeri, Ada Cafe.<br>
+                Konaklama: Taş ev otelleri ve butik pansiyonlar.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/kapadokya.jpg" alt="Kapadokya">
+            <h3>Kapadokya</h3>
+            <p>Balon turları ve peri bacaları arasında masalsı bir deneyim.</p>
+            <p>
+                Yapılacak Aktiviteler: Balon turları, vadi yürüyüşleri.<br>
+                Popüler Restoranlar: Seten Restaurant, Topdeck Cave.<br>
+                Konaklama: Mağara otelleri ve lüks suitler.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/abant.jpg" alt="Abant">
+            <h3>Abant</h3>
+            <p>Doğa ile baş başa romantik bir kaçamak için Abant'ın sakinliği.</p>
+            <p>
+                Yapılacak Aktiviteler: Göl çevresinde yürüyüş, fayton turları.<br>
+                Popüler Restoranlar: Göl Restoran, Doğa Cafe.<br>
+                Konaklama: Bungalov evler ve göl kenarı oteller.
+            </p>
+        </div>
+    </div>
+    
+
+    <div id="pricing" class="pricing">
+        <h4>Fiyatlandırma</h4>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Temel Romantik Paket</li>
+                    <li>Bodrum ve Bozcaada Turları</li>
+                    <li>Standart Konaklama</li>
+                    <li>Çiftlere Özel Aktiviteler</li>
+                    <li>
+                        <h2>₺3000</h2>
+                        <span>çift başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header" style="background-color: #ff66b2; color: white;">Standart Romantik Paket</li>
+                    <li>Kapadokya ve Abant Turları</li>
+                    <li>4 Yıldızlı Konaklama</li>
+                    <li>Balon ve Fayton Deneyimleri</li>
+                    <li>
+                        <h2>₺5000</h2>
+                        <span>çift başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Premium Romantik Paket</li>
+                    <li>Tüm Bölgeler</li>
+                    <li>Lüks Konaklama</li>
+                    <li>VIP Hizmetler</li>
+                    <li>
+                        <h2>₺8000</h2>
+                        <span>çift başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 Zeynep Çevik.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bliss Travel | Login & Registration</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: url("assets/header-bg1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 110vh;
+        background: rgba(39, 39, 39, 0.4);
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
+        z-index: 100;
+      }
+      .nav-logo p {
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .nav-button .btn {
+        width: 130px;
+        height: 40px;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.4);
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      #registerBtn {
+        margin-left: 15px;
+      }
+      .btn.white-btn {
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .btn.btn.white-btn:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .form-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 512px;
+        height: 420px;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .login-container {
+        position: absolute;
+        left: 4px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.5s ease-in-out;
+      }
+      .register-container {
+        position: absolute;
+        right: -520px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.5s ease-in-out;
+      }
+      .top span {
+        color: #fff;
+        font-size: small;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .top span a {
+        font-weight: 500;
+        color: #fff;
+        margin-left: 5px;
+      }
+      header {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        padding: 10px 0 30px 0;
+      }
+      .input-field {
+        font-size: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        height: 50px;
+        border: none;
+        padding-left: 40px;
+        border-radius: 25px;
+        width: 100%;
+      }
+
+      .input-field::placeholder {
+        color: #ffffff;
+        opacity: 0.8;
+      }
+
+      .input-field:focus::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .input-box {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .input-box i {
+        position: absolute;
+        left: 12px;
+        top: 15px;
+        font-size: 20px;
+        color: #fff;
+      }
+      .submit {
+        background: #ffb300;
+        border: none;
+        padding: 10px;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        cursor: pointer;
+      }
+      .submit:hover {
+        background: #ff9800;
+      }
+      .two-col {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        font-size: 14px;
+      }
+      .two-col .one input {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="nav-logo">
+          <p>Bliss Travel</p>
+        </div>
+
+        <div class="nav-button">
+          <button class="btn white-btn" id="loginBtn" onclick="login()">
+            Sign In
+          </button>
+          <button class="btn" id="registerBtn" onclick="register()">
+            Sign Up
+          </button>
+        </div>
+      </nav>
+
+      <div class="form-box">
+        <div class="login-container" id="login">
+          <div class="top">
+            <span
+              >Don't have an account?
+              <a href="#" onclick="register()">Sign Up</a></span
+            >
+            <header>Login</header>
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              class="input-field"
+              id="login-email"
+              placeholder="Email"
+            />
+            <i class="bx bx-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              class="input-field"
+              id="login-password"
+              placeholder="Password"
+            />
+            <i class="bx bx-lock-alt"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="submit"
+              class="submit"
+              value="Sign In"
+              onclick="handleLogin()"
+            />
+          </div>
+          <div class="two-col">
+            <div class="one">
+            
+            </div>
+          </div>
+        </div>
+
+        <div class="register-container" id="register">
+          <div class="top">
+            <span
+              >Already have an account?
+              <a href="#" onclick="login()">Login</a></span
+            >
+            <header>Sign Up</header>
+          </div>
+          <div class="input-box">
+            <input
+              type="text"
+              class="input-field"
+              id="first-name"
+              placeholder="Firstname"
+            />
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="text"
+              class="input-field"
+              id="last-name"
+              placeholder="Lastname"
+            />
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              class="input-field"
+              id="reg-email"
+              placeholder="Email"
+            />
+            <i class="bx bx-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              class="input-field"
+              id="reg-password"
+              placeholder="Password"
+            />
+            <i class="bx bx-lock-alt"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="submit"
+              class="submit"
+              value="Register"
+              onclick="handleRegister()"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (isLoggedIn === "true") {
+          document.getElementById("loginScreen").style.display = "none";
+          document.getElementById("bookTripScreen").style.display = "block";
+        } else {
+          document.getElementById("loginScreen").style.display = "block";
+          document.getElementById("bookTripScreen").style.display = "none";
+        }
+      });
+
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      const passwordRegex =
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\s]).{6,20}$/;
+
+      function login() {
+        document.getElementById("login").style.left = "4px";
+        document.getElementById("register").style.right = "-520px";
+      }
+
+      function register() {
+        document.getElementById("login").style.left = "-520px";
+        document.getElementById("register").style.right = "4px";
+      }
+
+      function handleLogin() {
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        if (!emailRegex.test(email)) {
+          alert("Geçersiz e-posta formatı!");
+          return;
+        }
+
+        const storedEmail = localStorage.getItem("Email");
+        const storedPassword = localStorage.getItem("Password");
+        const storedFirstname = localStorage.getItem("Firstname");
+        const storedLastname = localStorage.getItem("Lastname");
+
+        if (email === storedEmail && password === storedPassword) {
+          alert(`Hoşgeldiniz, ${storedFirstname} ${storedLastname}!`);
+
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("loggedInEmail", email);
+
+          window.location.href = "./book-trip.html";
+        } else {
+          alert("E-posta veya şifre hatalı.");
+        }
+      }
+      function handleLogout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.reload();
+      }
+
+      function handleRegister() {
+        const firstName = document.getElementById("first-name").value.trim();
+        const lastName = document.getElementById("last-name").value.trim();
+        const email = document.getElementById("reg-email").value.trim();
+        const password = document.getElementById("reg-password").value.trim();
+
+        if (!firstName || !lastName || !email || !password) {
+          alert("Tüm alanları doldurun!");
+          return;
+        }
+
+        if (!emailRegex.test(email)) {
+          alert("Geçersiz e-posta formatı!");
+          return;
+        }
+
+        if (!passwordRegex.test(password)) {
+          alert(
+            "Şifre en az 6, en fazla 20 karakter olmalı ve en az bir büyük harf, bir küçük harf, bir sayı ve bir özel karakter içermelidir!"
+          );
+          return;
+        }
+
+        localStorage.setItem("Firstname", firstName);
+        localStorage.setItem("Lastname", lastName);
+        localStorage.setItem("Email", email);
+        localStorage.setItem("Password", password);
+
+        alert("Kayıt başarılı! Şimdi giriş yapabilirsiniz.");
+        login();
+      }
+      function login() {
+        document.getElementById("login").style.left = "4px";
+        document.getElementById("register").style.right = "-520px";
+      }
+
+      function register() {
+        document.getElementById("login").style.left = "-520px";
+        document.getElementById("register").style.right = "4px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Family Explorer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3dda9;
+    color: #333;
+}
+
+.main {
+    margin-left: 20px;
+    padding: 20px;
+}
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: rgb(254, 254, 254);
+}
+.city-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.city-card {
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+.city-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.city-card h3 {
+    margin: 10px 0;
+}
+.city-card p {
+    padding: 0 10px;
+    color: gray;
+}
+.pricing {
+    text-align: center;
+    margin-top: 40px;
+}
+.pricing h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.pricing-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.pricing-card {
+    flex: 1;
+    max-width: 30%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+.pricing-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pricing-card li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.pricing-card li:last-child {
+    border-bottom: none;
+}
+.pricing-card h2 {
+    margin: 10px 0;
+}
+.pricing-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pricing-card button:hover {
+    background-color: black;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <h1>Aile Tatilleri</h1>
+        <p>Türkiye'nin aile dostu destinasyonlarını keşfedin</p>
+    </div>
+
+    <div class="city-grid">
+        <div class="city-card">
+            <img src="assets/antalya.jpg" alt="Antalya">
+            <h3>Antalya</h3>
+            <p>Muhteşem plajları ve aile aktiviteleriyle ünlü bir tatil cenneti.</p>
+            <p>
+                Gezilecek Yerler: Konyaaltı Plajı, Kaleiçi, Duden Şelalesi.<br>
+                Popüler Restoranlar: 7 Mehmet, Piyazcı Ahmet.<br>
+                Aile Aktiviteleri: Tekne turları, su parkları.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/izmir.jpg" alt="İzmir">
+            <h3>İzmir</h3>
+            <p>Aileler için hem kültürel hem eğlenceli seçeneklerle dolu modern bir şehir.</p>
+            <p>
+                Gezilecek Yerler: Kordon, İzmir Saat Kulesi, Çeşme Plajları.<br>
+                Popüler Restoranlar: Deniz Restaurant, Kordon Lokantası.<br>
+                Aile Aktiviteleri: Sahil yürüyüşleri, İzmir Doğal Yaşam Parkı.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/akyaka.jpg" alt="Akyaka">
+            <h3>Akyaka</h3>
+            <p>Sakin doğası ve aile dostu plajlarıyla ideal bir kaçamak.</p>
+            <p>
+                Gezilecek Yerler: Azmak Nehri, Akyaka Plajı.<br>
+                Popüler Restoranlar: Orfoz Restaurant, Yelken Restaurant.<br>
+                Aile Aktiviteleri: Nehirde kano turu, bisiklet turları.
+            </p>
+        </div>
+    
+        <div class="city-card">
+            <img src="assets/sapanca.jpg" alt="Sapanca">
+            <h3>Sapanca</h3>
+            <p>Doğa ile iç içe huzurlu bir aile tatili için mükemmel bir yer.</p>
+            <p>
+                Gezilecek Yerler: Sapanca Gölü, Kartepe.<br>
+                Popüler Restoranlar: Kartepe Restoran, Sapanca Lokantası.<br>
+                Aile Aktiviteleri: Piknik alanları, ATV turları.
+            </p>
+        </div>
+    </div>
+    
+
+    <div id="pricing" class="pricing">
+        <h4>Fiyatlandırma</h4>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Temel Aile Paketi</li>
+                    <li>Antalya ve İzmir Turu</li>
+                    <li>Konaklama</li>
+                    <li>Aile Dostu Aktiviteler</li>
+                    <li>
+                        <h2>₺2500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header" style="background-color: teal; color: white;">Standart Aile Paketi</li>
+                    <li>Akyaka ve Sapanca Turları</li>
+                    <li>4 Yıldızlı Konaklama</li>
+                    <li>Aile Dostu Hizmetler</li>
+                    <li>
+                        <h2>₺4500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <ul>
+                    <li class="header">Premium Aile Paketi</li>
+                    <li>Tüm Bölgeler</li>
+                    <li>Lüks Konaklama</li>
+                    <li>Özel Aile Rehberi</li>
+                    <li>
+                        <h2>₺7500</h2>
+                        <span>kişi başı</span>
+                    </li>
+                    <li><button onclick="window.location.href='./login.html'">Satın Al</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Copyright © 2024 Zeynep Çevik.</p>
+</div>
+
+</body>
+</html>
